@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://coc35c8ex70v1"]
+[gd_scene load_steps=2 format=3 uid="uid://coc35c8ex70v1"]
+
+[ext_resource type="PackedScene" uid="uid://d1ejr1ey6fntx" path="res://level_1/scenes/temp_enemy_1.tscn" id="1_u4aia"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="temp_enemy_1" parent="." instance=ExtResource("1_u4aia")]
