@@ -1,5 +1,27 @@
-[gd_scene format=3 uid="uid://d1ejr1ey6fntx"]
+[gd_scene load_steps=4 format=3 uid="uid://d1ejr1ey6fntx"]
+
+[ext_resource type="Texture2D" uid="uid://bwwxed5s7nlbd" path="res://sprites/enemy sprites/Enemy.png" id="1_ul5bf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7hdi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ul5bf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27c5v"]
+radius = 17.0
 
 [node name="temp_enemy_1" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_p7hdi")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_27c5v")
