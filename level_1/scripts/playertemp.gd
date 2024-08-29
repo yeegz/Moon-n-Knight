@@ -9,8 +9,9 @@ func _process(delta):
 	movement_up()
 	movement_side()
 	animations()
+	update_position()
 
-
+#------------------Movement-----------------------------
 func movement_up():
 	if Input.is_action_pressed("ui_up"):
 		position.y -= speed
@@ -23,6 +24,7 @@ func movement_side():
 	elif Input.is_action_pressed("ui_right"):
 		position.x += speed*(direction)
 
+#------------------Animation----------------------------
 func animations():
 	if Input.is_action_just_pressed("ui_left"):
 		animation.flip_h = true
@@ -31,3 +33,7 @@ func animations():
 	
 	if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
 		animation.play("walking")
+
+#---------to update position of camera--------------------
+func update_position():
+	global.player_position = position
