@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://donjs6otmhq1b"]
+[gd_scene load_steps=9 format=3 uid="uid://donjs6otmhq1b"]
 
-[ext_resource type="Texture2D" uid="uid://d3b0j03o07ld7" path="res://sprites/character sprites/mycheeks1.png" id="1_t8e05"]
-[ext_resource type="Texture2D" uid="uid://duefkf3skwadi" path="res://sprites/character sprites/mycheeks2.png" id="2_6v4yr"]
-[ext_resource type="Texture2D" uid="uid://dfgcsrhfpwm3i" path="res://sprites/character sprites/mycheeks3.png" id="3_4bmaa"]
-[ext_resource type="Texture2D" uid="uid://175tgb51rggp" path="res://sprites/character sprites/mycheeks4.png" id="4_7e6s7"]
-[ext_resource type="Texture2D" uid="uid://os56ol1bwrdo" path="res://sprites/character sprites/Sprite-0001.png" id="5_ktac4"]
+[ext_resource type="Script" path="res://level_1/scripts/playertemp.gd" id="1_hqpf8"]
+[ext_resource type="Texture2D" uid="uid://b1efehaoeuo42" path="res://sprites/character sprites/mycheeks1.png" id="1_t8e05"]
+[ext_resource type="Texture2D" uid="uid://tmu5b57rn7c7" path="res://sprites/character sprites/mycheeks2.png" id="2_6v4yr"]
+[ext_resource type="Texture2D" uid="uid://bnxl3ma1tlj42" path="res://sprites/character sprites/mycheeks3.png" id="3_4bmaa"]
+[ext_resource type="Texture2D" uid="uid://ckg5pey2442hy" path="res://sprites/character sprites/mycheeks4.png" id="4_7e6s7"]
+[ext_resource type="Texture2D" uid="uid://cwwr0rkkuun2q" path="res://sprites/character sprites/Sprite-0001.png" id="5_ktac4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vhnme"]
 animations = [{
@@ -37,9 +38,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7sak"]
+size = Vector2(23, 30)
+
 [node name="Playertemp" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_hqpf8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vhnme")
-animation = &"idle"
+animation = &"walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_g7sak")
