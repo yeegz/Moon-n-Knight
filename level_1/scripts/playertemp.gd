@@ -33,6 +33,8 @@ func animations():
 	
 	if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right") or Input.is_action_pressed("ui_up") or Input.is_action_pressed("ui_down"):
 		animation.play("walking")
+	else:
+		animation.play("idle")
 
 #---------to update position of camera--------------------
 func update_position():
