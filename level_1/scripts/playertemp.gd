@@ -14,8 +14,6 @@ func movement_up():
 		position.y -= 2
 	elif Input.is_action_pressed("ui_down"):
 		position.y += 2
-	
-	move_and_slide()
 
 func movement_side():
 	if Input.is_action_pressed("ui_left"):
